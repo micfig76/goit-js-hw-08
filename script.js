@@ -1,15 +1,15 @@
 
 const el = (tag, props) => Object.assign(document.createElement(tag), props);
 
-const createPictureSlate = ({id, preview, description}) => {
+const createPictureSlate = ({id, preview, original, description}) => {
     const article = el("article", {id, className: "picture-slate"});
 
     const img = el("img", {src: preview, alt: description});
+    const img2 = el("img2", {src: original, alt: description});
 
-    article.append( img );
+    article.append(img, img2);
 
     return article;
-
 };
 
 const renderimages = (images, rootList) => {
@@ -29,7 +29,7 @@ const galleryList = document.querySelector("ul#gallery-list");
 renderimages(images, galleryList);
 
 
-document.getElementById('stop-link').addEventListener('click', function(event) {
+document.getElementById('my-link').addEventListener('click', function(event) {
     event.preventDefault();
   });
   
