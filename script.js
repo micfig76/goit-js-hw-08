@@ -4,7 +4,7 @@ const createPictureSlate = ({id, preview, original, description}) => {
     const article = el("article", {id, className: "picture-slate"});
 
     const img = el("img", {src: preview, alt: description});
-    const link = el("a", {href: original, target: "_blank", className: "image-link"});
+    const link = el("a", {href: original, className: "image-link"});
     link.appendChild(img);
 
     article.appendChild(link);
@@ -34,8 +34,9 @@ document.getElementById('my-link').addEventListener('click', function(event) {
 
 const galleryContainer = document.querySelector("ul#gallery-list");
 
-galleryContainer.addEventListener("click", ({ target }) => {
-    if (target.tagName === "IMG" && target.parentElement.classList.contains("image-link")) {
+galleryContainer.addEventListener("click", (event) => {
+    const target = event.target;
+    if (target.tagName === "IMG" && target.parentElement && target.parentElement.classList.contains("image-link")) {
         event.preventDefault();
         console.log(target.parentElement.href);
     }
