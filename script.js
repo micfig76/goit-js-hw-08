@@ -1,18 +1,18 @@
-
 const el = (tag, props) => Object.assign(document.createElement(tag), props);
 
 const createPictureSlate = ({id, preview, original, description}) => {
     const article = el("article", {id, className: "picture-slate"});
 
     const img = el("img", {src: preview, alt: description});
-    const img2 = el("img2", {src: original, alt: description});
+    const link = el("a", {href: original, target: "_blank"});
+    link.appendChild(img);
 
-    article.append(img, img2);
+    article.appendChild(link);
 
     return article;
 };
 
-const renderimages = (images, rootList) => {
+const renderImages = (images, rootList) => {
     const listItems = images.map(createPictureSlate)
         .map(slate => {
             const li = el("li");
@@ -26,10 +26,15 @@ const renderimages = (images, rootList) => {
 };
 
 const galleryList = document.querySelector("ul#gallery-list");
-renderimages(images, galleryList);
-
+renderImages(images, galleryList);
 
 document.getElementById('my-link').addEventListener('click', function(event) {
     event.preventDefault();
-  });
-  
+});
+
+const galleryContainer = document.querySelector("ul#gallery-list");
+
+galleryContainer.addEventListener("click", ({ target }) => {
+    if (!target.classList.contains("image")) return;
+    console.log(target.id);
+});
