@@ -7,6 +7,11 @@ const createPictureSlate = ({id, preview, original, description}) => {
     const link = el("a", {href: original, className: "image-link"});
     link.appendChild(img);
 
+    link.addEventListener("click", (event) => {
+        event.preventDefault();
+        console.log(link.href);
+    });
+
     article.appendChild(link);
 
     return article;
@@ -30,14 +35,4 @@ renderImages(images, galleryList);
 
 document.getElementById('my-link').addEventListener('click', function(event) {
     event.preventDefault();
-});
-
-const galleryContainer = document.querySelector("ul#gallery-list");
-
-galleryContainer.addEventListener("click", (event) => {
-    const target = event.target;
-    if (target.tagName === "IMG" && target.parentElement && target.parentElement.classList.contains("image-link")) {
-        event.preventDefault();
-        console.log(target.parentElement.href);
-    }
 });
