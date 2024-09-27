@@ -9,20 +9,32 @@
   <link rel="stylesheet" href="./styles.css">
   <script src="./gallery.js" defer></script>
   <script src="./script.js" defer></script>
+  <link
+  rel="stylesheet"
+  href="https://cdn.jsdelivr.net/npm/basiclightbox@5.0.4/dist/basicLightbox.min.css"
+  integrity="sha256-r7Neol40GubQBzMKAJovEaXbl9FClnADCrIMPljlx3E="
+  crossorigin="anonymous"
+/> 
+
+<script
+  src="https://cdn.jsdelivr.net/npm/basiclightbox@5.0.4/dist/basicLightbox.min.js"
+  integrity="sha256-nMn34BfOxpKD0GwV5nZMwdS4e8SI8Ekz+G7dLeGE4XY="
+  crossorigin="anonymous"
+></script>
 </head>
 
 <body>
-  <ul id="gallery-list" class="gallery-list">
-    <template>
-      <article class="picture-slate">
-        <li class="gallery-item"></li>
-        <a id="my-Link" class="gallery-link" href="large-image.jpg">
-          <img class="gallery-image" src="small-image.jpg" data-source="large-image.jpg" alt="Image description" />
-        </a>
-        </li>
-      </article>
-    </template>
-  </ul>
+<ul id="gallery-list" class="gallery-list">
+  <template>
+    <article class="picture-slate">
+      <li class="gallery-item"></li>
+      <a id="my-Link" class="gallery-link" href="large-image.jpg">
+        <img class="gallery-image" src="small-image.jpg" data-source="large-image.jpg" alt="Image description" />
+      </a>
+    </li>
+  </article>
+</template>
+</ul>
   <a href="https://example.com" id="empty-link">Click me</a>
 </body>
 
