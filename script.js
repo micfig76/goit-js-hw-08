@@ -36,3 +36,14 @@ renderImages(images, galleryList);
 document.getElementById('my-link').addEventListener('click', function(event) {
     event.preventDefault();
 });
+
+const lightbox = basicLightbox.create("<h1>Hello There!</h1>", {
+   onShow: () => console.log("Opened"),
+   onClose: () => console.log("closed"),
+});
+
+const btn = document.createElement("button");
+btn.textContent = "Show modal";
+btn.addEventListener("click", lightbox.show);
+
+document.body.append(btn);
