@@ -3,29 +3,18 @@
 }
 
 body {
-    margin: 0;
-}
-
-#gallery-list {
+    margin: 156px;
     display: flex;
+    justify-content: center;
+}
+
+
+
+.gallery-list {
+    display: flex;
+    justify-content: center;
+    max-width: 1800px;
     flex-wrap: wrap;
-    padding: 0;
     list-style: none;
-    gap: 54px; 
-}
-
-.gallery-item {
-    flex: 1 1 calc(33.333% - 54px); 
-    margin: 5px;
-    box-sizing: border-box; 
-}
-
-.gallery-link {
-    display: block;
-    width: 100%;
-}
-
-.gallery-image {
-    width: 100%;
-    height: auto;
+    gap: 24px;
 }
